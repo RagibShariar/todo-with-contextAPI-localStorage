@@ -7,6 +7,11 @@ const TodoForm = () => {
 
   const add = (e) => {
     e.preventDefault();
+
+    if (!todo) {
+      // console.log('empty submit')
+      return
+    }
     addTodo({todo:todo, completed:false})
     setTodo("");
   };
