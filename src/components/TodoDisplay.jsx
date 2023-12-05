@@ -21,9 +21,8 @@ const TodoDisplay = (props) => {
   return (
     <>
       <div
-        className={`flex border px-3 py-2 rounded-lg gap-x-2 gap-y-3 bg-cyan-100 dark:bg-violet-200 drop-shadow-md border-none ${
-          todo.completed ? "bg-violet-200 dark:bg-green-200" : ""
-        }`}
+        className={`flex border px-3 py-2 rounded-lg gap-x-2 gap-y-3  drop-shadow-md border-none 
+        ${todo.completed ? "bg-green-200" : "bg-violet-200"}`}
       >
         <input
           type="checkbox"
@@ -51,7 +50,7 @@ const TodoDisplay = (props) => {
           disabled={todo.completed}
           onClick={() => {
             ref.current.focus();
-            
+
             if (isTodoEditable) {
               editTodo();
             } else {
