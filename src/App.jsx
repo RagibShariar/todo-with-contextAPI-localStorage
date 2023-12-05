@@ -34,6 +34,9 @@ function App() {
   const deleteAllTodos = () => {
     setTodos([]);
   };
+  const deleteCompleted = () => {
+    setTodos((prev) => prev.filter((prevTodo) => prevTodo.completed !== true));
+  }
 
   // retrieve previous todos from local storage
   useEffect(() => {
@@ -57,6 +60,7 @@ function App() {
         deleteTodo,
         toggleComplete,
         deleteAllTodos,
+        deleteCompleted
       }}
     >
       <div className="h-screen bg-slate-200 dark:bg-slate-900 text-slate-700  dark:text-slate-50 ">

@@ -13,7 +13,7 @@ const TodoForm = () => {
       return
     }
     addTodo({todo:todo, completed:false})
-    setTodo("");
+    // setTodo("");
   };
 
   return (

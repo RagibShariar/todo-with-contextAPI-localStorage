@@ -21,8 +21,8 @@ const TodoDisplay = (props) => {
   return (
     <>
       <div
-        className={`flex border px-3 py-2 rounded-lg gap-x-2 gap-y-3  dark:bg-violet-200 drop-shadow-md border-none ${
-          todo.completed ? "bg-green-300 dark:bg-green-300" : "bg-cyan-100"
+        className={`flex border px-3 py-2 rounded-lg gap-x-2 gap-y-3 bg-cyan-100 dark:bg-violet-200 drop-shadow-md border-none ${
+          todo.completed ? "bg-violet-200 dark:bg-green-200" : ""
         }`}
       >
         <input
@@ -37,7 +37,7 @@ const TodoDisplay = (props) => {
           type="text"
           ref={ref}
           className={`w-full text-lg font-semibold text-slate-900 rounded-md px-2 py-1 bg-transparent border-none outline-none 
-          ${todo.completed ? "line-through" : ""} 
+          ${todo.completed ? "line-through text-slate-600/50" : ""} 
           ${isTodoEditable ? "bg-white" : ""}
           `}
           name=""

@@ -3,14 +3,10 @@ import TodoDisplay from "./TodoDisplay";
 import TodoForm from "./TodoForm";
 
 const TodoWithContextAPI = () => {
-  const { todos,deleteAllTodos } = useTodo();
+  const { todos,deleteAllTodos, deleteCompleted } = useTodo();
 
-  const todoLength = (todos.length);
-  // console.log(todoLength)
-
-  const deleteAll = () => {
-    deleteAllTodos();
-  }
+  const todoLength = todos.filter(todo=> todo.completed === false).length
+  
 
   return (
         <div className="px-3 max-w-xl mx-auto">
@@ -19,8 +15,11 @@ const TodoWithContextAPI = () => {
         {/* todo form goes here */}
         <TodoForm/>
       </div>
-      <div className="mb-6">
+      <div className="mb-6 flex justify-between">
         <p>{todoLength>0 ? (todoLength===1)?`${todoLength} task left` :`${todoLength} tasks left` :"No task left"} </p>
+        <button
+          onClick={deleteAllTodos}
+          className="text-red-600">Clear All</button>
       </div>
       <div className="flex flex-col gap-y-2">
         {/* loop and todo item display here */}
@@ -31,10 +30,9 @@ const TodoWithContextAPI = () => {
       </div>
       <div className="flex justify-end mt-12">
         <button
-          onClick={deleteAll}
+          onClick={deleteCompleted}
           className={`bg-red-500 text-slate-50 px-4 py-1.5 rounded-md drop-shadow-md hover:bg-red-600 disabled:bg-red-400`}
-          disabled={todoLength===0}
-        >Remove all todos</button>
+        >Clear Completed</button>
       </div>
         </div>
   );
