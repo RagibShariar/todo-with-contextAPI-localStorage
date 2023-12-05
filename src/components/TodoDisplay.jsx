@@ -35,9 +35,9 @@ const TodoDisplay = (props) => {
         <input
           type="text"
           ref={ref}
-          className={`w-full text-lg font-semibold text-slate-900 rounded-md px-2 py-1 bg-transparent border-none outline-none 
-          ${todo.completed ? "line-through text-slate-600/50" : ""} 
-          ${isTodoEditable ? "bg-white" : ""}
+          className={`w-full text-lg font-semibold capitalize rounded-md px-2 py-1 bg-transparent border-none outline-none 
+          ${todo.completed ? "line-through text-slate-600/50" : "text-slate-900"} 
+          ${isTodoEditable ? "bg-white/60" : ""}
           `}
           name=""
           id=""
